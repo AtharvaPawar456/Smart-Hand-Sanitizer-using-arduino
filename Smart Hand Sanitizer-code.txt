@@ -7,7 +7,7 @@
 #define trig 11
 
 float  duration; // time taken by the pulse to return back
-float  distance; // oneway distance travelled by the pulse
+float  distance; // oneway distance traveled by the pulse
 
 #include <Servo.h>
 Servo myservo;
@@ -47,7 +47,7 @@ void time_Measurement()
     	digitalWrite(trig, LOW);
   
     	duration = pulseIn(echo, HIGH);
-
+}
 void check_For_Hand()
   	{
     	boolean sensorvalue= digitalRead(PIR_In);
@@ -59,22 +59,20 @@ void check_For_Hand()
 		for (pos = 0; pos <= 180; pos += 1) { 	// goes from 0 degrees to 180 degrees
     							// in steps of 1 degree
     			myservo.write(pos);             // tell servo to go to position in variable 'pos'
-    			delay(100);}                     // wait for the servo to reach the position
+    			delay(10);}                     // wait for the servo to reach the position
   		
 		for (pos = 180; pos >= 0; pos -= 1) { 	// goes from 180 degrees to 0 degrees
     			myservo.write(pos);             // tell servo to go to position in variable 'pos'
-    			delay(15);
-      			delay(1000);}
+      			delay(10);}
 
 		for (pos = 0; pos <= 180; pos += 1) { 	// goes from 0 degrees to 180 degrees
     							// in steps of 1 degree
     			myservo.write(pos);             // tell servo to go to position in variable 'pos'
-    			delay(100);}                     // wait for the servo to reach the position
+    			delay(10);}                     // wait for the servo to reach the position
   		
 		for (pos = 180; pos >= 0; pos -= 1) { 	// goes from 180 degrees to 0 degrees
     			myservo.write(pos);             // tell servo to go to position in variable 'pos'
-    			delay(15);
-      			delay(1000);}
+      			delay(10);}
      		}
      		delay(10);  
 		  
